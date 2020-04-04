@@ -1,5 +1,5 @@
 #include <stdio.h>
-// ham tinh gia tri cho moi so hang cua ma tran theo tung vong 
+// hàm tính giá trị các số hạng của ma trận theo từng vòng, count sẽ tăng dần 
 int find ( int A[][100], int m, int n, int k, int count){
 	int i;
 	for ( i=k; i<=n; i++){
@@ -24,18 +24,22 @@ int find ( int A[][100], int m, int n, int k, int count){
 	return count;
 }
 int main(){
+	// lưu các số vào ma trận, lưu lần lượt theo từng vòng
+	// ví dụ 3*3, vòng 1: 1 2 3 , vòng 2 ....
+	//                    8   4              
+	//                    7 6 5
+	// in ma trận
 	int A[100][100], m, n;
 	scanf("%d%d", &m, &n);
 	int tmp=1, tmp1=m, tmp2=n, k=1, count=0,i, j;
 	
 	while ( count < tmp1*tmp2){
 		count=find(A, m, n, k, count);
-		k++;// k=thu tu v�ng 1 ,2, 3...
-		m--;// tru bo dong da tinh tu duoi len
-		n--;//tru bo cot da tinh tu phai sang
+		k++;
+		m--;
+		n--;
 	}
 	
-	// in ma tran sau khi tinh 
 	// vi m n da thay doi nen in ma tran theo tmp1=m, tmp2=n
 	for ( i=1; i<=tmp1; i++){
 		for ( j=1; j<=tmp2; j++){
