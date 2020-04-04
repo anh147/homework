@@ -1,5 +1,5 @@
 #include <stdio.h>
-// hàm tính giá trị các số hạng của ma trận theo từng vòng, count sẽ tăng dần 
+// hàm tính giá trị các số hạng của ma trận theo từng vòng, count sẽ tăng dần, mỗi vòng for tính giá trị cho 1 hàng hoặc một cột
 int find ( int A[][100], int m, int n, int k, int count){
 	int i;
 	for ( i=k; i<=n; i++){
@@ -31,7 +31,7 @@ int main(){
 	// in ma trận
 	int A[100][100], m, n;
 	scanf("%d%d", &m, &n);
-	int tmp=1, tmp1=m, tmp2=n, k=1, count=0,i, j;
+	int tmp=1, tmp1=m, tmp2=n, k=1, count=0,i , j;
 	
 	while ( count < tmp1*tmp2){
 		count=find(A, m, n, k, count);
@@ -40,7 +40,7 @@ int main(){
 		n--;
 	}
 	
-	// vi m n da thay doi nen in ma tran theo tmp1=m, tmp2=n
+	// vì m và n đã thay đổi nên in ma trận theo tmp1=m, tmp2=n.
 	for ( i=1; i<=tmp1; i++){
 		for ( j=1; j<=tmp2; j++){
 			printf (" %5d      ", A[i][j]);
